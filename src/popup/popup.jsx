@@ -16,13 +16,13 @@ class Popup extends Component{
                   <span className="slider round"></span>
                 </label>
             </header>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" >
+            <a href="./options.html" target="_blank" >
               <button className="btn btn-primary" >Options</button>
             </a>
           </div>
         )
       }
-
+      
 }
 
 
