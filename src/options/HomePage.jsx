@@ -27,8 +27,13 @@ class HomePage extends Component {
             expereince: []
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleUpload = this.handleUpload.bind(this);
     }
     
+    handleUpload(event){
+        //event.target.files[0] is the file that gets uploaded
+        console.log(event.target.files[0])
+    }
     
     handleChange(event) {
         let newData = {}
@@ -54,7 +59,7 @@ class HomePage extends Component {
                         </Row>
                         <Row>
                             <Col>
-                            <input type="file" id="resume-upload" name="filename" hidden/>
+                            <input type="file" id="resume-upload" name="filename" onChange={this.handleUpload} hidden/>
                             <label for="resume-upload" className="mx-auto d-block upload-button" style={{fontFamily: "Raleway", width: '12%'}}>Upload Resume!</label>
                             </Col>
                         </Row>
