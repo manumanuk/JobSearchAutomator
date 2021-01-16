@@ -17,8 +17,7 @@ class Popup extends Component{
                   <span className="slider round"></span>
                 </label>
             </header>
-            <br/>
-            <a href="./options.html" target="_blank" >
+            <a href="/options.html" target="_blank" rel="noopener noreferrer">
               <button className="btn btn-primary" >Options</button>
             </a>
             <hr></hr>
