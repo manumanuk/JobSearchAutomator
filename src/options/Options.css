@@ -49,19 +49,23 @@
   border: 1px solid black;
 }
 
-.button {
+.upload-button {
   background: black !important;
   border-radius: 4px !important;
   border: 1px black solid !important;
+  text-shadow: none !important;
+  padding: 1%;
+  text-align: center;
 }
 
-.button:hover {
+.upload-button:hover {
   background-color: rgba(0,0,0,0.1) !important;
   border: 1px black solid !important;
   color: black !important;
+  cursor: pointer;
 }
 
-.button:focus {
+.upload-button:focus {
   outline: none !important;
   box-shadow: none !important;
 }

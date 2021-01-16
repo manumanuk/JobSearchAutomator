@@ -54,7 +54,8 @@ class HomePage extends Component {
                         </Row>
                         <Row>
                             <Col>
-                                <Button className="mx-auto d-block button">Upload Resume!</Button>
+                            <input type="file" id="resume-upload" name="filename" hidden/>
+                            <label for="resume-upload" className="mx-auto d-block upload-button" style={{fontFamily: "Raleway", width: '12%'}}>Upload Resume!</label>
                             </Col>
                         </Row>
                     </Container>
