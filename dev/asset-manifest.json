@@ -10,7 +10,7 @@
     "contentScript.js.map": "contentScript.bundle.js.map",
     "options.js": "options.bundle.js",
     "options.js.map": "options.bundle.js.map",
-    "static/media/logo.svg": "static/media/logo.103b5fa1.svg"
+    "static/media/logo.svg": "static/media/logo.2d27ead7.svg"
   },
   "entrypoints": [
     "app.bundle.js",

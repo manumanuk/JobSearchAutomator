@@ -5,7 +5,7 @@ import firebase from 'firebase/app'
 import 'firebase/database'
 import databaseHelper from './databaseFunctions';
 
-var dbhelper = new databaseHelper;
+var dbhelper = new databaseHelper();
 
 class Options extends Component {
   sendToFirebase()

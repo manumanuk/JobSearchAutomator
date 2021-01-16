@@ -10,8 +10,10 @@
     "firebase": "^8.2.3",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
-    "react-browser-extension-scripts": "^4.0.10",
-    "react-dom": "^17.0.1"
+    "react-browser-extension-scripts": "4.0.10",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "web-vitals": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
