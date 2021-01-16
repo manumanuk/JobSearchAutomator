@@ -36,6 +36,13 @@
 .main-content {
   z-index: 1;
   margin: 0 !important;
+  background-size: cover;
+  padding: 0 !important;
+}
+
+.blur-bg {
+  backdrop-filter: blur(5px);
+  padding: 15vh !important;
 }
 
 .test {
@@ -45,10 +52,13 @@
 .button {
   background: black !important;
   border-radius: 4px !important;
+  border: 1px black solid !important;
 }
 
 .button:hover {
-  background-color: gray !important;
+  background-color: rgba(0,0,0,0.1) !important;
+  border: 1px black solid !important;
+  color: black !important;
 }
 
 .button:focus {
@@ -63,4 +73,5 @@
 
 .white-text {
   color: white !important;
+  text-shadow: 0.75px 0.75px 0px black;
 }

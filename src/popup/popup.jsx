@@ -22,7 +22,7 @@ class Popup extends Component{
           </div>
         )
       }
-
+      
 }
 
 
