@@ -10,8 +10,8 @@ class HomePage extends Component {
     state = {  }
     render() { 
         return ( 
-            <Jumbotron fluid className="main-content white-text" style={{backgroundImage=`url(${skyscrapers})`}}>
-                <Container>
+            <Jumbotron fluid className="main-content white-text" style={{backgroundImage:`url(${skyscrapers})`}}>
+                <Container fluid>
                     <Row>
                         <Col>
                             <h1 className="display-1 mx-auto header d-block text-center mb-0">Let's get started!</h1>

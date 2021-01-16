@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "10c224c0cfe99b733bab";
+/******/ 	var hotCurrentHash = "7805255037ea99372dfe";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -47801,8 +47801,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Row */ "./node_modules/react-bootstrap/esm/Row.js");
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Col */ "./node_modules/react-bootstrap/esm/Col.js");
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var _skyscrapers_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./skyscrapers.jpg */ "./src/options/skyscrapers.jpg");
 
 var _jsxFileName = "C:\\Users\\kalia\\Documents\\Dev\\HtN2021\\JobSearchAutomator\\src\\options\\HomePage.jsx";
+
 
 
 
@@ -47820,7 +47822,11 @@ class HomePage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
     return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_bootstrap_Jumbotron__WEBPACK_IMPORTED_MODULE_2__["default"], {
       fluid: true,
       className: "main-content white-text",
+      style: {
+        backgroundImage: `url(${_skyscrapers_jpg__WEBPACK_IMPORTED_MODULE_7__["default"]})`
+      },
       children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        fluid: true,
         children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_4__["default"], {
           children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__["default"], {
             children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("h1", {
@@ -47828,21 +47834,21 @@ class HomePage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
               children: "Let's get started!"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 16,
+              lineNumber: 17,
               columnNumber: 29
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("br", {}, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 17,
+              lineNumber: 18,
               columnNumber: 29
             }, this)]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 15,
+            lineNumber: 16,
             columnNumber: 25
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 14,
+          lineNumber: 15,
           columnNumber: 21
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_4__["default"], {
           children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -47851,17 +47857,17 @@ class HomePage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
               children: "Upload your resume below to start auto-parsing, or fill in data by yourself below."
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 22,
+              lineNumber: 23,
               columnNumber: 29
             }, this)
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 21,
+            lineNumber: 22,
             columnNumber: 25
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 20,
+          lineNumber: 21,
           columnNumber: 21
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_4__["default"], {
           children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -47870,27 +47876,27 @@ class HomePage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
               children: "Upload Resume!"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 27,
+              lineNumber: 28,
               columnNumber: 29
             }, this)
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 26,
+            lineNumber: 27,
             columnNumber: 25
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 25,
+          lineNumber: 26,
           columnNumber: 21
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 13,
+        lineNumber: 14,
         columnNumber: 17
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 13,
       columnNumber: 13
     }, this);
   }
@@ -48166,6 +48172,19 @@ react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/Object(rea
   lineNumber: 6,
   columnNumber: 3
 }, undefined), document.getElementById('options'));
+
+/***/ }),
+
+/***/ "./src/options/skyscrapers.jpg":
+/*!*************************************!*\
+  !*** ./src/options/skyscrapers.jpg ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "static/media/skyscrapers.jpg");
 
 /***/ }),
 
