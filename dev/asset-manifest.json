@@ -10,12 +10,12 @@
     "contentScript.js.map": "contentScript.bundle.js.map",
     "options.js": "options.bundle.js",
     "options.js.map": "options.bundle.js.map",
-    "static/media/logo.svg": "static/media/logo.103b5fa1.svg"
+    "static/media/logo.svg": "static/media/logo.2d27ead7.svg"
   },
   "entrypoints": [
     "app.bundle.js",
-    "app.39268771d25b7775a592.hot-update.js",
     "options.bundle.js",
+    "options.6ae4d7029d8d1b48f9b6.hot-update.js",
     "background.bundle.js",
     "contentScript.bundle.js"
   ]
