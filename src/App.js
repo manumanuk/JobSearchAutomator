@@ -1,42 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
 import React, {Component} from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Popup from "./popup/popup"
 
 class App extends Component{
   constructor(){
     super()
     this.state={
-      isOff: false
+      isOff: false,
     }
     this.turnOff = this.turnOff.bind(this)
-
   }
 
   turnOff(){
-
+    this.setState(prevState =>{
+      return{
+        isOff: !prevState.isOff
+      }
+    })
+    console.log("hello")
   }
-
-
-
   render(){
-    return (
-      <div className="App">
-        <header>This is my Header
-            <label>
-              <input
-                type="checkbox"
-                name="turnOff"
-                onChange={this.turnOff}
-                checked={this.state.isOff}
-              />
-            </label>
-          <button>Turn Off</button>
-        </header>
-        <button>Hello Sahil + Soumav</button>
-      </div>
-    );
+    return(
+      <Popup />
+    )
   }
+
+
 }
 
 export default App;
