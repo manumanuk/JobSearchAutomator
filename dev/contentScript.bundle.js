@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "dd01f8c83a98933216bd";
+/******/ 	var hotCurrentHash = "64a13ddc5dfbf4a420a9";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1508,24 +1508,43 @@ module.exports.formatError = function (err) {
 /*!************************************!*\
   !*** ./src/contentScript/index.js ***!
   \************************************/
-/*! exports provided: printAllPageLinks */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "printAllPageLinks", function() { return printAllPageLinks; });
-// If your extension doesn't need a content script, just leave this file empty
-// This is an example of a script that will run on every page. This can alter pages
-// Don't forget to change `matches` in manifest.json if you want to only change specific webpages
-printAllPageLinks(); // This needs to be an export due to typescript implementation limitation of needing '--isolatedModules' tsconfig
+var myState = document.getElementsByTagName('h2')[0];
 
-function printAllPageLinks() {
-  const allLinks = Array.from(document.querySelectorAll('a')).map(link => link.href);
-  console.log('-'.repeat(30));
-  console.log(`These are all ${allLinks.length} links on the current page that have been printed by the Sample Create React Extension`);
-  console.log(allLinks);
-  console.log('-'.repeat(30));
+function stateUpdate() {
+  if (!myState) {
+    myState = document.getElementsByTagName('h2')[0];
+  } else {
+    var myStateNew = document.getElementsByTagName('h2')[0];
+    console.log("myStateNew is ");
+    console.log(myStateNew.innerHTML);
+    console.log("myState is ");
+    console.log(myState.innerHTML);
+
+    if (myStateNew && myState && myStateNew.innerHTML != myState.innerHTML) {
+      getPageHTML();
+      console.log("hiya");
+      myState = myStateNew;
+    }
+  }
 }
+
+getPageHTML();
+
+function getPageHTML() {
+  {
+    var y = document.getElementsByTagName('label'); //console.log(y[0].value)
+
+    var x = document.getElementsByTagName('input'); //x[0].value = "Weatherman"
+    //console.log(x[0].value)
+
+    console.log("hi Aryan");
+  }
+}
+
+document.addEventListener('DOMNodeInserted', stateUpdate);
 
 /***/ }),
 
