@@ -1,43 +1,81 @@
-body {
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-.App {
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(56, 56, 56);
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+#nav-title {
+  font-family: Raleway !important;
+  letter-spacing: 0.65em;
+}
+
+#nav {
+  box-shadow: 1px 1px 5px black;
+  background-color: white;
+}
+
+.main-content {
+  z-index: 1;
+  margin: 0 !important;
+  background-size: cover;
+  padding: 0 !important;
+}
+
+.blur-bg {
+  backdrop-filter: blur(5px);
+  padding: 15vh !important;
+}
+
+.test {
+  border: 1px solid black;
+}
+
+.upload-button {
+  background: black !important;
+  border-radius: 4px !important;
+  border: 1px black solid !important;
+  text-shadow: none !important;
+  padding: 1%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.upload-button:hover {
+  background-color: rgba(0,0,0,0.1) !important;
+  border: 1px black solid !important;
+  color: black !important;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.upload-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header {
+  font-family: Raleway;
+  font-weight: 200 !important;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.white-text {
+  color: white !important;
+  text-shadow: 0.75px 0.75px 0px black;
 }

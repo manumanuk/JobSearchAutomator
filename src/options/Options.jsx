@@ -1,6 +1,9 @@
 import logo from '../logo.svg';
 import React, { Component } from 'react';
 import './Options.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './Navbar';
+import HomePage from './HomePage'
 import firebase from 'firebase/app'
 import 'firebase/database'
 import databaseHelper from './databaseFunctions';
@@ -33,13 +36,12 @@ class Options extends Component {
   render()
   {
     return (
-    <div className="App">
-      <button type="button" onClick={this.sendToFirebase}>idk</button>
-    </div>
+      <body>
+        <NavBar/>
+        <HomePage/>
+      </body>
     )
   }
-
-  
 }
 
 export default Options;
