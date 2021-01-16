@@ -11,7 +11,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-browser-extension-scripts": "^4.0.10",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
