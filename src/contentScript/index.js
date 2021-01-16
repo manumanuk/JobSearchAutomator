@@ -1,34 +1,26 @@
-var myState = document.getElementsByTagName('h2')[0]
+var currState = document.getElementsByTagName('h2')[0]
+
+var currStateString = "";
+var prevStateString = "";
+//Boolean recorded = false;
 
 function stateUpdate(){
-  // if(!myState){
-  //   myState = document.getElementsByTagName('h2')[0]
-  // }
+  currState = document.getElementsByTagName('h2')[0]
+  
+  if(currState)
+  {
+    currStateString = currState.innerHTML;
+    
+    if(prevStateString != currStateString)
+    {
+      //console.log(prevStateString);
+      prevStateString = currStateString;
+      //console.log(currStateString);
+      //console.log("Prev State String Updated");
+      /***CALL FUNCTIONS TO DO STUFF***/
 
-  // else{
-  //   var myStateNew= document.getElementsByTagName('h2')[0]
-
-  //   console.log("myStateNew is ")
-  //   console.log(myStateNew.innerHTML)
-  //   console.log("myState is ")
-  //   console.log(myState.innerHTML)
-
-  //   if(myStateNew.innerHTML!=myState.innerHTML){
-  //     getPageHTML()
-  //     console.log("hiya")
-  //     myState=myStateNew
-  //   }
-  // }
-
-  //New attempt below
-
-  // var myStateNew= document.getElementsByTagName('h2')[0]
-  // console.log(myStateNew)
-  // if(myState && myStateNew && myStateNew.innerHTML!=myState.innerHTML)
-  // {
-  //   getPageHTML()
-  //   console.log("hiya")
-  // }
+    }
+  }
 }
 
 getPageHTML();
@@ -39,7 +31,7 @@ function getPageHTML() {
     var x = document.getElementsByTagName('input')
     //x[0].value = "Weatherman"
     //console.log(x[0].value)
-    console.log("hi Aryan")
+    console.log("Called Page HTML")
   }
 }
 
