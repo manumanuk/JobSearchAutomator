@@ -96,8 +96,6 @@ function getPageHTML() {
               form.value = data.education.grade
               break;
             }
-
-          form.value = "Aryan"
         }
       }
     }
