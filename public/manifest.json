@@ -24,6 +24,6 @@
     "128": "img/1x/128x128.png"
   },
   "options_page": "options.html",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "storage"],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
