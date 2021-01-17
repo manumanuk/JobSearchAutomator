@@ -19,8 +19,8 @@ class HomePage extends Component {
             phone: "",
             location: {
                 city: "",
-                country: "",
                 state: "",
+                country: "",
                 postalCode: "",
                 address: ""
             },
@@ -64,18 +64,58 @@ class HomePage extends Component {
     handleUpload(event){
         //event.target.files[0] is the file that gets uploaded
 
-        let obj; // obj is the variable to hold the json file
-        console.log(event.target.files[0])
+        // console.log(event.target.files[0])
         let uploadedFile = event.target.files[0]
-        let url = 'URLForFlaskAPI'
+        console.log("File Uploaded");
+        let url = 'http://127.0.0.1:5000/uploadDoc'
+        let data = new FormData()
+        data.append("file", event.target.files[0])
         var req = fetch(url, {
             method: "post",
-            body: uploadedFile
+            body: data
         })
 
+        console.log(req)
+        let test = this;
         req.then(function(response) {
             return response.json()
-        }).then(function(obj) {return obj.json()})
+        }).then(function(obj) {
+            console.log(obj)
+            let workExp = [];
+            for(const experience of Object.keys(obj.data.workExperience)) {
+                let data = {};
+                data.description = obj.data.workExperience[experience].jobDescription;
+                data.startDate = obj.data.workExperience[experience].dates.startDate;
+                data.endDate = obj.data.workExperience[experience].dates.endDate;
+                data.jobTitle = obj.data.workExperience[experience].jobTitle;
+                data.employer = obj.data.workExperience[experience].organization;
+                workExp.push(data);
+            }
+            let locationInfo = {};
+            if(obj.data.location) {
+                locationInfo.country=obj.data.location.country;
+                locationInfo.postalCode=obj.data.location.postalCode;
+                locationInfo.state=obj.data.location.state;
+            }
+            let educationData = {};
+            if(obj.data.education && Object.keys(obj.data.education).length >0) {
+                educationData.organization = obj.data.education[Object.keys(obj.data.education)[0]].organization
+                educationData.grade = obj.data.education[Object.keys(obj.data.education)[0]].grade.value
+                educationData.completionDate = obj.data.education[Object.keys(obj.data.education)[0]].dates.completionDate
+                educationData.degree = obj.data.education[Object.keys(obj.data.education)[0]].accreditation.education
+                educationData.program = obj.data.education[Object.keys(obj.data.education)[0]].inputStr
+            }
+            test.setState({
+                name: {
+                    firstName: obj.data.name.first,
+                    lastName: obj.data.name.last
+                },
+                phone: obj.data.phoneNumbers[0],
+                skills: obj.data.skills,
+                experiences: workExp,
+                email: obj.data.emails[0],
+            })
+        })
     }
     
     handleChange(event) {
@@ -158,7 +198,7 @@ class HomePage extends Component {
             return(
                 <div>
                     <Form.Label className={(parentObject == this.state)? "object-title" : ""}>{this.nameParse[thingToRender]}</Form.Label>
-                    <Form.Control id={thingToRender} type="text"></Form.Control>
+                    <Form.Control id={thingToRender} defaultValue={parentObject[thingToRender]} type="text"></Form.Control>
                 </div>
             );
         } else if (typeof(parentObject[thingToRender]) == 'object' && !Array.isArray(parentObject[thingToRender])) {

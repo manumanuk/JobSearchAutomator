@@ -2,24 +2,30 @@
   "manifest_version": 2,
   "version": "1.0.0",
   "name": "JobOverflow",
-  "short_name" : "JobOverflow",
+  "short_name": "JobOverflow",
   "description": "An autofiller for all your job application needs",
   "browser_action": {
     "default_title": "JobOverflow",
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["background.bundle.js"]
+    "scripts": [
+      "background.bundle.js"
+    ]
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["contentScript.bundle.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.bundle.js"
+      ]
     }
   ],
   "icons": {
     "16": "img/1x/16x16.png",
-    "32" : "img/1x/32x32.png",
+    "32": "img/1x/32x32.png",
     "48": "img/1x/48x48.png",
     "128": "img/1x/128x128.png"
   },
