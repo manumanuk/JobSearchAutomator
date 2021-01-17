@@ -16,8 +16,12 @@ function stateUpdate(){
       //console.log(prevStateString);
       prevStateString = currStateString;
       //console.log(currStateString);
-      //console.log("Prev State String Updated");
-      /***CALL FUNCTIONS TO DO STUFF***/
+      console.log("Prev State String Updated");
+      setTimeout(function() {
+        getPageHTML()
+        console.log("I delayed")
+      }, 2000);
+      
 
     }
   }
@@ -26,12 +30,30 @@ function stateUpdate(){
 getPageHTML();
 function getPageHTML() {
   {
-    var y = document.getElementsByTagName('label')
-    //console.log(y[0].value)
-    var x = document.getElementsByTagName('input')
-    //x[0].value = "Weatherman"
-    //console.log(x[0].value)
-    console.log("Called Page HTML")
+    var wordBank = ["first name", "last name", "full name", "name", "city", "country", 
+    "province", "postal", "state", "address", "phone number", "phone eformtension", "university", 
+    "degree", "program", "gpa", "grade", "from", "to", "skill", "linkedin", "github"]
+
+    var label = document.getElementsByTagName('label')
+    console.log(label.length)
+
+    for(var i=0; i<label.length; i++){
+      console.log(label[i].innerHTML)
+      var field = label[i].innerHTML.toLowerCase()
+
+      for(var j=0; j<wordBank.length; j++){
+
+        if(field.includes(wordBank[j])){
+          var ID = label[i].htmlFor
+          var form = document.getElementById(ID)
+          form.value = "Aryan"
+        }
+      }
+
+      
+    }
+    
+    // label[i].innerHTML.includes("Name")
   }
 }
 
