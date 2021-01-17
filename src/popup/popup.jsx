@@ -1,3 +1,4 @@
+/*global chrome*/
 import React, {Component} from "react"
 
 
@@ -16,6 +17,7 @@ turnOff(){
         isOff: !prevState.isOff
     }
   })
+  chrome.runtime.sendMessage({content: "turnOff"})
 }
 
     render(){
@@ -36,11 +38,10 @@ turnOff(){
               <button className="btn btn-primary" >Options</button>
             </a>
             <hr></hr>
-            <footer className="popup footer">Powered by Jobbers <img src="./public/img/icon-48.png" alt=""></img></footer>
+            <footer className="popup footer">Powered by JobOverflow<img src="./public/img/icon-48.png" alt=""></img></footer>
           </div>
         )
-      }
-      
+      }   
 }
 
 
