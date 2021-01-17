@@ -11,7 +11,8 @@ def return_json(path):
 
     url = "https://resume-parser.affinda.com/public/api/v1/documents/"
 
-    token = "9f9cc8a21bb32ad7e5e2036f919346c9863b71e1"
+    with open("token.key", 'wb') as api_token:
+        token = encryption_key.read()
 
     headers = {"Authorization": f"Bearer {token}"}
 
