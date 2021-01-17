@@ -3,7 +3,7 @@ var currStateString = "";
 var prevStateString ="";
 var recorded = false;
 var wordBank = ["first name", "last name", "full name", "name", "city", "country", 
-    "province", "postal", "state", "address", "phone number", "phone eformtension", "university", 
+    "province", "postal", "state", "address", "phone number", "phone extension", "university", 
     "degree", "program", "gpa", "grade", "from", "to", "skill", "linkedin", "github"]
 
 function stateUpdate(){
