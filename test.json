@@ -1,0 +1,171 @@
+{
+    "identifier": "zuXUCBgy",
+    "started_dt": "2021-01-16T18:57:01.832274Z",
+    "ready_dt": "2021-01-16T18:57:04.546333Z",
+    "documents": [
+        {
+            "identifier": "nMcyEJNe",
+            "ready": true,
+            "failed": false,
+            "file_name": "Resume_2021.pdf",
+            "name": {
+                "raw": "Graham Haedrich",
+                "first": "Graham",
+                "last": "Haedrich",
+                "middle": "",
+                "title": ""
+            },
+            "phone_numbers": [
+                "905-818-3530"
+            ],
+            "websites": [
+                "github.com/grahamhaedrich",
+                "linkedin.com/in/graham-haedrich"
+            ],
+            "emails": [
+                "ghaedrich@uwaterloo.ca"
+            ],
+            "date_of_birth": null,
+            "location": null,
+            "objective": "",
+            "summary": "",
+            "education": [
+                {
+                    "organization": "Waterloo University",
+                    "accreditation": {
+                        "education": "",
+                        "input_str": "",
+                        "match_str": null,
+                        "education_level": null
+                    },
+                    "grade": {
+                        "raw": "GPA: 3.96",
+                        "metric": "GPA",
+                        "value": "3.96"
+                    },
+                    "location": {
+                        "formatted": "Waterloo, ON, Canada",
+                        "postal_code": null,
+                        "state": "Ontario",
+                        "country": "Canada",
+                        "raw_input": "Waterloo, Ontario"
+                    },
+                    "dates": {
+                        "completionDate": "2025-05-01",
+                        "isCurrent": true
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "job_title": "Camp Counsellor:",
+                    "organization": null,
+                    "location": null,
+                    "dates": {
+                        "start_date": "2019-06-01",
+                        "end_date": "2019-08-01",
+                        "months_in_position": 2,
+                        "isCurrent": false
+                    },
+                    "job_description": ""
+                },
+                {
+                    "job_title": "French Immersion Certificate:",
+                    "organization": null,
+                    "location": null,
+                    "dates": {
+                        "start_date": null,
+                        "end_date": "2020-06-01",
+                        "months_in_position": null,
+                        "isCurrent": false
+                    },
+                    "job_description": ""
+                }
+            ],
+            "skills": [
+                "Leadership",
+                "Microsoft Office",
+                "Java (Programming Language)",
+                "AutoCAD",
+                "JavaScript (Programming Language)",
+                "C (Programming Language)",
+                "Statistics",
+                "Library",
+                "Github",
+                "Application Programming Interface (API)",
+                "Adafruit",
+                "SolidWorks (CAD)",
+                "French Language",
+                "Minesweeper",
+                "Cascading Style Sheets (CSS)",
+                "Financial Information eXchange (FIX) Protocol",
+                "HyperText Markup Language (HTML)",
+                "Flexbox",
+                "Git"
+            ],
+            "certifications": [
+                "Programming Languages JavaScript CSS HTML Java C",
+                "Programming Coursework Algorithms Data Structures Digital Computation C"
+            ],
+            "publications": [],
+            "referees": [],
+            "sections": [
+                {
+                    "section_type": "PersonalDetails",
+                    "bbox": [
+                        0.0,
+                        33.1525192260742,
+                        612.0,
+                        87.0240936279297
+                    ],
+                    "page_index": 0,
+                    "text": "ghaedrich@uwaterloo.ca\n905-818-3530\ngithub.com/grahamhaedrich\nlinkedin.com/in/graham-haedrich\nGraham Haedrich"
+                },
+                {
+                    "section_type": "Education",
+                    "bbox": [
+                        0.0,
+                        88.8938064575195,
+                        612.0,
+                        163.878982543945
+                    ],
+                    "page_index": 0,
+                    "text": "Education\nWaterloo, Ontario\nWaterloo University\nSept 2020 - May 2025\n Major: Mechatronics Engineering, B.A.Sc\n GPA: 3.96\n\nProgramming Coursework: Algorithms & Data Structures, Digital Computation (C++)"
+                },
+                {
+                    "section_type": "Projects",
+                    "bbox": [
+                        0.0,
+                        172.157028198242,
+                        612.0,
+                        497.655364990234
+                    ],
+                    "page_index": 0,
+                    "text": "Software Projects\nCovid-19 Tracker: CSS, HTML, JavaScript\n- Website that displays live COVID-19 statistics for Canada\n- Fetches up to date information using an API sourced from GitHub\nMinesweeper Game: CSS, HTML, JavaScript\n-\nMinesweeper game using JavaScript objects to keep track of data for each game square\nIncludes a recursive algorithm to perform square revealing\nUtilizes CSS flexbox layout to arrange squares orderly in grid\n-\n-\nSnake Game: CSS, HTML, JavaScript\n- Snake game with graphics drawn using HTML canvas along with JavaScript\n- Incorporates a start page styled by CSS that allows the user to select a game difficulty\nGoose Escape Game: C++\n-\n2D escape game constructed using BearLibTerminal library\nBegan with a skeleton of the game and worked alongside a partner to fix bugs and implemented new features\nusing C++ objects\n-\nBop-It Video Game: MakeCode, JavaScript\n- Worked with a team of 4 to build a Bop-it like game which can be controlled by the Adafruit Circuit Playground\n- Visuals for the game designed in Microsoft MakeCode\nMancala Game: Java\n- Two player Mancala game which features classes to construct objects to store board information and various\nfunctions to carry out gameplay"
+                },
+                {
+                    "section_type": "Skills/Interests/Languages",
+                    "bbox": [
+                        0.0,
+                        500.642120361328,
+                        612.0,
+                        633.742919921875
+                    ],
+                    "page_index": 0,
+                    "text": "Skills\nProgramming Languages: JavaScript, CSS, HTML, Java, C++\nOther: AutoCad, Git, MakeCode, Microsoft Office, Solidworks\nW ork E xperience\nCamp Counsellor: 06/2019 - 08/2019\nToday’s Family\n- Worked alongside staff members to care for young children\n- Supervised small groups of children on day trips using leadership and organization skills to maintain the safety of\nthe kids"
+                },
+                {
+                    "section_type": "Achievements",
+                    "bbox": [
+                        0.0,
+                        636.583068847656,
+                        612.0,
+                        716.956604003906
+                    ],
+                    "page_index": 0,
+                    "text": "Awards\nUniversity of Waterloo President’s Scholarship of Distinction: 06/2020\n- Awarded to students with a high school admission average of 95%+\nFrench Immersion Certificate: 06/2020\n- Awarded to students who have completed the required number of French courses from Grade 4 to Grade 12"
+                }
+            ]
+        }
+    ]
+}
