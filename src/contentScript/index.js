@@ -1,8 +1,16 @@
+import Firebase from '../firebase';
+import databaseHelper from '../databaseFunctions';
+
+var dbhelper = new databaseHelper();
+
 var currState = document.getElementsByTagName('h2')[0]
 
 var currStateString = "";
 var prevStateString = "";
 //Boolean recorded = false;
+
+var numberOfStatusUpdates = 0;
+
 
 function stateUpdate(){
   currState = document.getElementsByTagName('h2')[0]
@@ -15,9 +23,11 @@ function stateUpdate(){
     {
       //console.log(prevStateString);
       prevStateString = currStateString;
+      numberOfStatusUpdates++;
       //console.log(currStateString);
       //console.log("Prev State String Updated");
       /***CALL FUNCTIONS TO DO STUFF***/
+      testDB();
 
     }
   }
@@ -36,3 +46,18 @@ function getPageHTML() {
 }
 
 document.addEventListener('DOMNodeInserted', stateUpdate);
+
+
+/*****FIREBASE SETUP*****/
+var firebaseClass = new Firebase();
+
+function testDB()
+{
+  var test =
+      {
+        name: currStateString,
+        number: numberOfStatusUpdates + 1
+      }
+
+      dbhelper.sendToFirestore(test);
+}
