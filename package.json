@@ -7,11 +7,8 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
     "bootstrap": "^4.5.3",
-<<<<<<< HEAD
     "node-fetch": "^2.6.1",
-=======
     "firebase": "^8.2.3",
->>>>>>> origin
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-browser-extension-scripts": "4.0.10",
