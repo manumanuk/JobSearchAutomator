@@ -38,7 +38,7 @@ class HomePage extends Component {
         let uploadedFile = event.target.files[0]
         let url = 'URLForFlaskAPI'
         var req = fetch(url, {
-            method: post,
+            method: 'post',
             body: uploadedFile
         })
 
