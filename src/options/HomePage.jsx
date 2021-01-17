@@ -45,6 +45,7 @@ class HomePage extends Component {
         req.then(function(response) {
             return response.json()
         }).then(function(obj) {obj => obj.json()})
+        console.log(obj)
     }
     
     handleChange(event) {
