@@ -9,7 +9,8 @@ var prevStateString ="";
 var recorded = false;
 var wordBank = ["first name", "last name", "full name", "name", "city", "country", 
     "province", "postal", "state", "address", "phone number", "phone extension", "university", 
-    "degree", "program", "gpa", "grade", "from", "to", "skill", "linkedin", "github"]
+    "degree", "program", "gpa", "grade", "from", "to", "skill", "linkedin", "github", 
+    "job", "work", "role", "location", "company"]
 
 var numberOfStatusUpdates = 0;
 var firebaseClass = new Firebase();
@@ -104,6 +105,21 @@ function getPageHTML() {
             case 16:
               form.value = info[data].education.grade
               break;
+            case 20:
+              form.value = "www.myLinkedIn.com"
+              break;
+            case 22:
+            case 23:
+              form.value = "Cashier"
+              break;
+            case 24:
+              form.value = "managed money"
+              break;
+            case 25:
+              form.value = "Toronto"
+              break;
+            case 26:
+              form.value = "Walmart"
             }
         }
       }
