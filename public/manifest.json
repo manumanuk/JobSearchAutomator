@@ -33,5 +33,5 @@
   "permissions": [
     "activeTab"
   ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://s-usc1c-nss-249.firebaseio.com/ https://jobsearchautomater-default-rtdb.firebaseio.com; object-src 'self'"
 }

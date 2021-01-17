@@ -109,11 +109,7 @@ class HomePage extends Component {
                 name: {
                     firstName: obj.data.name.first,
                     lastName: obj.data.name.last
-                },
-                phone: obj.data.phoneNumbers[0],
-                skills: obj.data.skills,
-                experiences: workExp,
-                email: obj.data.emails[0],
+                }
             })
         })
     }
