@@ -10,7 +10,15 @@ var recorded = false;
 var wordBank = ["first name", "last name", "full name", "name", "city", "country", 
     "province", "postal", "state", "address", "phone number", "phone extension", "university", 
     "degree", "program", "gpa", "grade", "from", "to", "skill", "linkedin", "github"]
-    var numberOfStatusUpdates = 0;
+
+var numberOfStatusUpdates = 0;
+var firebaseClass = new Firebase();
+
+let info ={}
+let keys ={}
+let data ={}
+
+
 function stateUpdate(){
   
     currState = document.getElementsByTagName('h2')[0]
@@ -24,7 +32,9 @@ function stateUpdate(){
        prevStateString = currStateString;
        //console.log(currStateString);
        //console.log("Prev State String Updated");
-      
+       info = dbhelper.retrieveInfo()
+       keys = Object.keys(info);
+       data = keys[0]
        setTimeout(function() {
           getPageHTML()
           console.log("I delayed")
@@ -33,9 +43,9 @@ function stateUpdate(){
   }
   }
 
-
 function getPageHTML() {
   {
+
     var label = document.getElementsByTagName('label')
     console.log(label.length)
 
@@ -49,7 +59,10 @@ function getPageHTML() {
           var ID = label[i].htmlFor
           var form = document.getElementById(ID)
           //change the value to the database value of whatever is being stored
-          
+          console.log("I found something")
+          console.log(info)
+          console.log(data)
+          console.log(data.name)
           switch(j){
             case 0:
               form.value = data.name.firstName
@@ -101,17 +114,10 @@ function getPageHTML() {
     }
   }
 }
-
-  let info = dbhelper.retrieveInfo()
-  let keys = Object.keys(info);
-  let data = keys[0]
-
 getPageHTML();
 document.addEventListener('DOMNodeInserted', stateUpdate);
 
 /*****FIREBASE SETUP*****/
-var firebaseClass = new Firebase();
-
 function testDB()
 {
   var test =
