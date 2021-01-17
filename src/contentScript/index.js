@@ -1,23 +1,25 @@
-var currState = document.getElementsByTagName('h2')[0]
+var headingList =['h1', 'h2', 'h3']
+var currState = 
+[document.getElementsByTagName('h1')[0], 
+document.getElementsByTagName('h2')[0], 
+document.getElementsByTagName('h3')[0]]
 
-var currStateString = "";
-var prevStateString = "";
-//Boolean recorded = false;
+var currStateString = ["", "", ""];
+var prevStateString = ["", "", ""];
+var recorded = false;
 var changed=false
 
 function stateUpdate(){
-  //var headingList =['h1', 'h2', 'h3']
-  //for(var heading=0; heading<headingList.length && !changed; heading++){
-    currState = document.getElementsByTagName('h2'/*headingList[heading]*/)[0]
-  
-    if(currState)
+  for(var heading=0; heading<headingList.length && !changed; heading++){
+    currState[heading] = document.getElementsByTagName(headingList[heading])[0]
+    if(currState[heading])
     {
-     currStateString = currState.innerHTML;
+     currStateString[heading] = currState[heading].innerHTML;
     
-     if(prevStateString != currStateString)
+     if(prevStateString[heading] != currStateString[heading])
      {
        //console.log(prevStateString);
-       prevStateString = currStateString;
+       prevStateString[heading] = currStateString[heading];
        //console.log(currStateString);
        //console.log("Prev State String Updated");
        setTimeout(function() {
@@ -28,7 +30,8 @@ function stateUpdate(){
     }
   }
   }
-//}
+  changed = false
+}
 
 getPageHTML();
 function getPageHTML() {
