@@ -2,11 +2,26 @@ import React, {Component} from "react"
 
 
 class Popup extends Component{
-    state={}
+  constructor(){
+    super()
+    this.state={
+      isOff: false
+    }
+    this.turnOff = this.turnOff.bind(this)
+}
+
+turnOff(){
+  this.setState(prevState => {
+    return{
+        isOff: !prevState.isOff
+    }
+  })
+}
+
     render(){
         return (
           <div className="App">
-            <header className="header text">Turn Off
+            <header>{this.state.isOff ? "Turn Off" : "Turn On"}
                 <label className="switch">
                   <input
                     type="checkbox"
