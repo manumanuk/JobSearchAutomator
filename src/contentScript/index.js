@@ -1,45 +1,36 @@
-var headingList =['h1', 'h2', 'h3']
-var currState = 
-[document.getElementsByTagName('h1')[0], 
-document.getElementsByTagName('h2')[0], 
-document.getElementsByTagName('h3')[0]]
-
-var currStateString = ["", "", ""];
-var prevStateString = ["", "", ""];
+var currState = document.getElementsByTagName('h2')[0]
+var currStateString = "";
+var prevStateString ="";
 var recorded = false;
-var changed=false
+var wordBank = ["first name", "last name", "full name", "name", "city", "country", 
+    "province", "postal", "state", "address", "phone number", "phone eformtension", "university", 
+    "degree", "program", "gpa", "grade", "from", "to", "skill", "linkedin", "github"]
 
 function stateUpdate(){
-  for(var heading=0; heading<headingList.length && !changed; heading++){
-    currState[heading] = document.getElementsByTagName(headingList[heading])[0]
-    if(currState[heading])
+  
+    currState = document.getElementsByTagName('h2')[0]
+    if(currState)
     {
-     currStateString[heading] = currState[heading].innerHTML;
+     currStateString = currState.innerHTML;
     
-     if(prevStateString[heading] != currStateString[heading])
+     if(prevStateString != currStateString)
      {
        //console.log(prevStateString);
-       prevStateString[heading] = currStateString[heading];
+       prevStateString = currStateString;
        //console.log(currStateString);
        //console.log("Prev State String Updated");
+      
        setTimeout(function() {
           getPageHTML()
           console.log("I delayed")
-          changed = true
-        }, 2000);
+        }, 1000);
     }
   }
   }
-  changed = false
-}
 
 getPageHTML();
 function getPageHTML() {
   {
-    var wordBank = ["first name", "last name", "full name", "name", "city", "country", 
-    "province", "postal", "state", "address", "phone number", "phone eformtension", "university", 
-    "degree", "program", "gpa", "grade", "from", "to", "skill", "linkedin", "github"]
-
     var label = document.getElementsByTagName('label')
     console.log(label.length)
 
@@ -52,6 +43,7 @@ function getPageHTML() {
         if(field.includes(wordBank[j])){
           var ID = label[i].htmlFor
           var form = document.getElementById(ID)
+          //change the value to the database value of whatever is being stored
           form.value = "Aryan"
         }
       }
