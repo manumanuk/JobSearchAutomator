@@ -19,8 +19,8 @@ class HomePage extends Component {
             phone: "",
             location: {
                 city: "",
-                country: "",
                 state: "",
+                country: "",
                 postalCode: "",
                 address: ""
             },
