@@ -30,8 +30,6 @@
     "128": "img/1x/128x128.png"
   },
   "options_page": "options.html",
-  "permissions": [
-    "activeTab"
-  ],
+  "permissions": ["activeTab", "storage"],
   "content_security_policy": "script-src 'self' 'unsafe-eval' https://s-usc1c-nss-249.firebaseio.com/ https://jobsearchautomater-default-rtdb.firebaseio.com; object-src 'self'"
 }
