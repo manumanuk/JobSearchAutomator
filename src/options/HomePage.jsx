@@ -24,8 +24,22 @@ class HomePage extends Component {
                 completionDate: ""
             },
             skills: [],
-            expereince: []
-        }
+            experiences: []
+        };
+        this.nameParse = {
+            name: "Name",
+            firstName: "First Name",
+            lastName: "Last Name",
+            phone: "Phone",
+            location: "Location",
+            email: "Email",
+            education: "Education",
+            organization: "Organization",
+            grade: "GPA",
+            completionDate: "Completion Date",
+            experiences: "Experiences",
+            skills: "Skills"
+        };
         this.handleChange = this.handleChange.bind(this);
         this.handleUpload = this.handleUpload.bind(this);
     }
@@ -36,10 +50,105 @@ class HomePage extends Component {
     }
     
     handleChange(event) {
-        let newData = {}
-        newData[event.target.id] = event.target.value
-        this.setState(newData, () => (console.log(this.state.name)));
+        this.setState({[event.target.source]: event.target.value}, () => (console.log([event.target.source])));
     }
+    
+    addToList(name) {
+        if (name == "skills") {
+            this.setState(prevState => ({
+                [name] : [...prevState[name], ""]
+            }));
+        } else if (name=="experiences") {
+            this.setState(prevState => ({
+                [name] : [...prevState[name], {
+                    employer: "",
+                    jobTitle: "",
+                    startDate: "",
+                    endDate: "",
+                    description: ""
+                }]
+            }))
+        }
+    }
+    removeFromList(name) {
+        const length = this.state[name].length-1;
+        this.setState({
+            [name] : this.state[name].filter((_, i) => i !== length)
+        })
+    }
+    renderForm(parentObject, thingToRender) {
+        if (typeof(parentObject[thingToRender]) == 'string') {
+            return(
+                <div>
+                    <Form.Label className={(parentObject == this.state)? "object-title" : ""}>{this.nameParse[thingToRender]}</Form.Label>
+                    <Form.Control id={thingToRender} type="text"></Form.Control>
+                </div>
+            );
+        } else if (typeof(parentObject[thingToRender]) == 'object' && !Array.isArray(parentObject[thingToRender])) {
+            return(
+                <div>
+                    <Form.Label className="object-title">{this.nameParse[thingToRender]}</Form.Label>
+                    <div className="mx-2">{Object.keys(parentObject[thingToRender]).map((key, index) => (this.renderForm(parentObject[thingToRender], key)))}</div>
+                </div>
+            );
+        } else if (thingToRender=="skills") {
+            return(
+                <div>
+                    <Form.Label className="object-title">{this.nameParse[thingToRender]}</Form.Label>
+                    { parentObject[thingToRender].map((key, index) => (
+                        <Form.Control id={thingToRender} type="text" className="my-1" defaultValue={parentObject[thingToRender][index]}></Form.Control>
+                    ))}
+                    <br/>
+                    <Button className="mx-1" variant="success" onClick={() => this.addToList("skills")}>Add a Skill</Button>
+                    <Button className="mx-1" variant="danger" onClick={() => this.removeFromList("skills")}>Remove a Skill</Button>
+                </div>
+            );
+        } else if (thingToRender=="experiences") {
+            return(
+                <div>
+                    <Form.Label className="object-title">{this.nameParse[thingToRender]}</Form.Label>
+                    {parentObject[thingToRender].map((item, index) => (
+                        <div className="mx-2">
+                            <br/>
+                            <Form.Label className="list-entry-title">Experience {index+1}</Form.Label>
+                            <Row>
+                            <Col>
+                                <Form.Label>Employer</Form.Label>
+                                <Form.Control id={"experience" + (index+1).toString() + "Employer"} type="text" defaultValue={item.employer}></Form.Control>
+                            </Col>
+                            </Row>
+                            <Row>
+                            <Col lg={8} md={8} sm={12} xs={12}>
+                                <Form.Label>Position</Form.Label>
+                                <Form.Control id={"experience" + (index+1).toString() + "JobTitle"} type="text" defaultValue={item.jobTitle}></Form.Control>
+                            </Col>
+                            <Col lg={2} md={2} sm={12} xs={12}>
+                                <Form.Label>Start Date</Form.Label>
+                                <Form.Control id={"experience" + (index+1).toString() + "StartDate"} type="text" defaultValue={item.startDate}></Form.Control>
+                            </Col>
+                            <Col lg={2} md={2} sm={12} xs={12}>
+                                <Form.Label>End Date</Form.Label>
+                                <Form.Control id={"experience" + (index+1).toString() + "EndDate"} type="text" defaultValue={item.endDate}></Form.Control>
+                            </Col>
+                            </Row>
+                            <Row>
+                            <Col>
+                                <Form.Label>Description</Form.Label>
+                                <Form.Control as="textarea" rows={3} id={"experience" + (index+1).toString() + "Description"} type="text" defaultValue={item.description}></Form.Control>
+                            </Col>
+                            </Row>
+                            <br/>
+                        </div>
+                    )) }
+                    <br/>
+                    <Button className="mx-1" variant="success" onClick={() => this.addToList("experiences")}>Add an Experience</Button>
+                    <Button className="mx-1" variant="danger" onClick={() => this.removeFromList("experiences")}>Remove an Experience</Button>
+                </div>
+            );
+        }
+    }
+    
+
 
     render() { 
         return ( 
@@ -65,14 +174,24 @@ class HomePage extends Component {
                         </Row>
                     </Container>
                 </Jumbotron>
-                <Jumbotron fluid>
+                <Jumbotron className="main-content py-5" fluid>
                     <Container>
                         <Row>
                             <Col>
-                                <Form>
-                                    <span><Form.Label>Name:
-                                        <span><Form.Control id="name" type="text" onChange={this.handleChange}></Form.Control></span>
-                                    </Form.Label></span>
+                            <Form>
+                                <Form.Group>
+                                    {Object.keys(this.state).map((key, index) => (
+                                    <>
+                                    {this.renderForm(this.state, key)}
+                                    <hr/>
+                                    </>
+                                    ))}
+                                    {/* <Form.Group>
+                                        <Form.Label>First Name:</Form.Label>
+                                        <Form.Control type="text"/>
+                                    </Form.Group> */}
+                                    <Button variant="primary" type="submit">Save</Button>
+                                </Form.Group>
                                 </Form>
                             </Col>
                         </Row>
