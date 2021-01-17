@@ -2,6 +2,9 @@ from pathlib import Path
 import requests
 import json
 
+import flask
+from flask.json import jsonify
+
 
 def return_json(path):
     FILE_TO_UPLOAD_PATH = Path(path)
@@ -39,3 +42,22 @@ def return_json(path):
         json.dump(response.json(), outfile)
 
     return response.json()
+
+    import flask
+
+
+app = flask.Flask(__name__)
+
+
+@app.route('/uploadDoc', methods=['POST'])
+def getResume():
+    if (request.method == 'POST'):
+        if 'file' not in request.files:
+            return redirect(request.url)
+        file = request.files['file']
+        if file:
+            file.save(os.path.join(file.file_name))
+            return return_json(file.path)
+
+
+app.run(host="0.0.0.0", port=8094)
