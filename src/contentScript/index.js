@@ -1,3 +1,8 @@
+import Firebase from '../firebase';
+import databaseHelper from '../databaseFunctions';
+
+var dbhelper = new databaseHelper();
+
 var currState = document.getElementsByTagName('h2')[0]
 var currStateString = "";
 var prevStateString ="";
@@ -5,6 +10,9 @@ var recorded = false;
 var wordBank = ["first name", "last name", "full name", "name", "city", "country", 
     "province", "postal", "state", "address", "phone number", "phone extension", "university", 
     "degree", "program", "gpa", "grade", "from", "to", "skill", "linkedin", "github"]
+
+var numberOfStatusUpdates = 0;
+
 
 function stateUpdate(){
   
@@ -24,6 +32,11 @@ function stateUpdate(){
           getPageHTML()
           console.log("I delayed")
         }, 2000);
+      /***CALL FUNCTIONS TO DO STUFF***/
+      //testDB();
+      //console.log(currStateString);
+      //console.log(dbhelper.retrieveInfo());
+
     }
   }
   }
@@ -52,3 +65,18 @@ function getPageHTML() {
 }
 
 document.addEventListener('DOMNodeInserted', stateUpdate);
+
+
+/*****FIREBASE SETUP*****/
+var firebaseClass = new Firebase();
+
+function testDB()
+{
+  var test =
+      {
+        name: currStateString,
+        number: numberOfStatusUpdates + 1
+      }
+
+      dbhelper.sendToFirestore(test);
+}

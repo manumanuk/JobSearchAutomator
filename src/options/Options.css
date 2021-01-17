@@ -79,3 +79,8 @@
   color: white !important;
   text-shadow: 0.75px 0.75px 0px black;
 }
+
+.object-title {
+  font-size: 1.5em;
+  font-family: Raleway;
+}

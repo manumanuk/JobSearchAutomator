@@ -6,7 +6,7 @@ import NavBar from './Navbar';
 import HomePage from './HomePage'
 import firebase from 'firebase/app'
 import 'firebase/database'
-import databaseHelper from './databaseFunctions';
+import databaseHelper from '../databaseFunctions';
 
 var dbhelper = new databaseHelper();
 
