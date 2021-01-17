@@ -26,4 +26,4 @@ yarn-debug.log*
 yarn-error.log*
 *.env
 
-parser/token.key
+token.key
