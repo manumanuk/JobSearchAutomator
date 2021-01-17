@@ -46,7 +46,19 @@ class HomePage extends Component {
     
     handleUpload(event){
         //event.target.files[0] is the file that gets uploaded
+
+        let obj; // obj is the variable to hold the json file
         console.log(event.target.files[0])
+        let uploadedFile = event.target.files[0]
+        let url = 'URLForFlaskAPI'
+        var req = fetch(url, {
+            method: post,
+            body: uploadedFile
+        })
+
+        req.then(function(response) {
+            return response.json()
+        }).then(function(obj) {obj => obj.json()})
     }
     
     handleChange(event) {
