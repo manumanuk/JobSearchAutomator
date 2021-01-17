@@ -104,13 +104,9 @@ function getPageHTML() {
   }
 }
 
-
   let info = dbhelper.retrieveInfo()
   let keys = Object.keys(info);
   let data = keys[0]
-
-
-
 
 getPageHTML();
 document.addEventListener('DOMNodeInserted', stateUpdate);
