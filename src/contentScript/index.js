@@ -23,7 +23,7 @@ function stateUpdate(){
        setTimeout(function() {
           getPageHTML()
           console.log("I delayed")
-        }, 1000);
+        }, 2000);
     }
   }
   }
