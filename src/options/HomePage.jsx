@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import skyscrapers from './skyscrapers.jpg'
 import Form from 'react-bootstrap/Form'
+import databaseHelper from '../databaseFunctions'
 
 class HomePage extends Component {
     constructor(props) {
@@ -16,12 +17,20 @@ class HomePage extends Component {
                 lastName: ""
             },
             phone: "",
-            location: "",
+            location: {
+                city: "",
+                country: "",
+                state: "",
+                postalCode: "",
+                address: ""
+            },
             email: "",
             education: {
                 organization: "",
                 grade: "",
-                completionDate: ""
+                completionDate: "",
+                degree: "",
+                program: ""
             },
             skills: [],
             experiences: []
@@ -38,9 +47,17 @@ class HomePage extends Component {
             grade: "GPA",
             completionDate: "Completion Date",
             experiences: "Experiences",
-            skills: "Skills"
+            skills: "Skills",
+            degree: "Degree",
+            program: "Program",
+            city: "City",
+            country: "Country",
+            postalCode: "Postal Code",
+            address: "Address",
+            state: "State/Province"
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpload = this.handleUpload.bind(this);
     }
     
@@ -66,7 +83,51 @@ class HomePage extends Component {
     }
 
     handleSubmit(event) {
-        console.log(event.target.firstName.value);
+        let sender = new databaseHelper();
+        let skillData = [];
+        for(let i=1; i<this.state.skills.length+1; i++) {
+            skillData.push(event.target['skill'+i.toString()].value);
+        }
+        let experienceData = [];
+        for (let i=1; i<this.state.experiences.length+1; i++) {
+            let newData = {};
+            newData['employer'] = event.target['experience'+i.toString()+'Employer'].value;
+            newData['jobTitle'] = event.target['experience'+i.toString()+'JobTitle'].value;
+            newData['startDate'] = event.target['experience'+i.toString()+'StartDate'].value;
+            newData['endDate'] = event.target['experience'+i.toString()+'EndDate'].value;
+            newData['description'] = event.target['experience'+i.toString()+'Description'].value;
+            experienceData.push(newData)
+        }
+        let data = {
+            name: {
+                firstName: event.target.firstName.value,
+                lastName: event.target.lastName.value,    
+            },
+            phoneNumber: event.target.phone.value,
+            location: {
+                city: event.target.city.value,
+                state: event.target.state.value,
+                country: event.target.country.value,
+                postalCode: event.target.postalCode.value,
+                address: event.target.address.value
+            },
+            email: event.target.email.value,
+            education: {
+                organization: event.target.organization.value,
+                grade: event.target.grade.value,
+                completionDate: event.target.completionDate.value,
+                degree: event.target.degree.value,
+                program: event.target.program.value
+            },
+            skills: skillData,
+            experiences: experienceData
+        }
+        alert("Successfully saved data!")
+        data = JSON.parse(JSON.stringify(data, function(k, v) {
+            if (v === undefined) { return null; } return v; 
+         }));
+         
+        sender.sendToFirestore(data);
     }
     
     addToList(name) {
@@ -112,7 +173,7 @@ class HomePage extends Component {
                 <div>
                     <Form.Label className="object-title">{this.nameParse[thingToRender]}</Form.Label>
                     { parentObject[thingToRender].map((key, index) => (
-                        <Form.Control id={thingToRender} type="text" className="my-1" defaultValue={parentObject[thingToRender][index]}></Form.Control>
+                        <Form.Control id={"skill" + (index+1).toString()} type="text" className="my-1" defaultValue={parentObject[thingToRender][index]}></Form.Control>
                     ))}
                     <br/>
                     <Button className="mx-1" variant="success" onClick={() => this.addToList("skills")}>Add a Skill</Button>
