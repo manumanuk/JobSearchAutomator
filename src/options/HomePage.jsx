@@ -52,6 +52,10 @@ class HomePage extends Component {
     handleChange(event) {
         this.setState({[event.target.source]: event.target.value}, () => (console.log([event.target.source])));
     }
+
+    handleSubmit(event) {
+        console.log(event.target.firstName.value);
+    }
     
     addToList(name) {
         if (name == "skills") {
@@ -178,7 +182,7 @@ class HomePage extends Component {
                     <Container>
                         <Row>
                             <Col>
-                            <Form>
+                            <Form onSubmit={this.handleSubmit}>
                                 <Form.Group>
                                     {Object.keys(this.state).map((key, index) => (
                                     <>
