@@ -1,19 +1,38 @@
-// If your extension doesn't need a content script, just leave this file empty
+var currState = document.getElementsByTagName('h2')[0]
 
-// This is an example of a script that will run on every page. This can alter pages
-// Don't forget to change `matches` in manifest.json if you want to only change specific webpages
-printAllPageLinks();
+var currStateString = "";
+var prevStateString = "";
+//Boolean recorded = false;
 
-// This needs to be an export due to typescript implementation limitation of needing '--isolatedModules' tsconfig
-export function printAllPageLinks() {
-  const allLinks = Array.from(document.querySelectorAll('a')).map(
-    link => link.href
-  );
+function stateUpdate(){
+  currState = document.getElementsByTagName('h2')[0]
+  
+  if(currState)
+  {
+    currStateString = currState.innerHTML;
+    
+    if(prevStateString != currStateString)
+    {
+      //console.log(prevStateString);
+      prevStateString = currStateString;
+      //console.log(currStateString);
+      //console.log("Prev State String Updated");
+      /***CALL FUNCTIONS TO DO STUFF***/
 
-  console.log('-'.repeat(30));
-  console.log(
-    `These are all ${allLinks.length} links on the current page that have been printed by the Sample Create React Extension`
-  );
-  console.log(allLinks);
-  console.log('-'.repeat(30));
+    }
+  }
 }
+
+getPageHTML();
+function getPageHTML() {
+  {
+    var y = document.getElementsByTagName('label')
+    //console.log(y[0].value)
+    var x = document.getElementsByTagName('input')
+    //x[0].value = "Weatherman"
+    //console.log(x[0].value)
+    console.log("Called Page HTML")
+  }
+}
+
+document.addEventListener('DOMNodeInserted', stateUpdate);
