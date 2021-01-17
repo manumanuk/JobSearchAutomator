@@ -27,9 +27,7 @@ function stateUpdate(){
       //console.log(currStateString);
       //console.log("Prev State String Updated");
       /***CALL FUNCTIONS TO DO STUFF***/
-      //testDB();
-      console.log(currStateString);
-      console.log(dbhelper.retrieveInfo());
+      testDB();
 
     }
   }
