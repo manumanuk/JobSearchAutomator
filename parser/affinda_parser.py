@@ -43,9 +43,6 @@ def return_json(path):
 
     return response.json()
 
-    import flask
-
-
 app = flask.Flask(__name__)
 
 
