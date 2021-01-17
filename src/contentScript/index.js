@@ -18,7 +18,6 @@ let info ={}
 let keys ={}
 let data ={}
 
-
 function stateUpdate(){
   
     currState = document.getElementsByTagName('h2')[0]
@@ -32,7 +31,9 @@ function stateUpdate(){
        prevStateString = currStateString;
        //console.log(currStateString);
        //console.log("Prev State String Updated");
+       
        info = dbhelper.retrieveInfo()
+       //var tester = dbhelper.retrieveInfo()
        keys = Object.keys(info);
        data = keys[0]
        setTimeout(function() {
@@ -59,54 +60,49 @@ function getPageHTML() {
           var ID = label[i].htmlFor
           var form = document.getElementById(ID)
           //change the value to the database value of whatever is being stored
-          console.log("I found something")
-          console.log(info)
-          console.log(data)
-          console.log(data.name)
           switch(j){
             case 0:
-              form.value = data.name.firstName
+              form.value = info[data].name.firstName
               break;
             case 1:
-              form.value = data.name.lastName
+              form.value = info[data].name.lastName
               break;
             case 2:
-            case 3:
-              form.value = data.name.firstName + data.name.lastName
+              form.value = info[data].name.firstName + info[data].name.lastName
               break;
             case 4:
-              form.value = data.location.city
+              form.value = info[data].location.city
               break;
             case 5:
-              form.value = data.location.country
+              form.value = info[data].location.country
               break;
             case 6:
             case 8:
-              form.value = data.location.state
+              form.value = info[data].location.state
               break;
             case 7:
-              form.value = data.location.postalCode
+              form.value = info[data].location.postalCode
               break;
             case 9:
-              form.value = data.location.address
+              form.value = info[data].location.address
               break;
             case 10:
-              form.value = data.phoneNumber
+              form.value = info[data].phoneNumber
               break;
             case 11:
               form.value = "+1"
               break;
             case 12:
-              form.value = data.education.organization
+              form.value = info[data].education.organization
               break;
             case 13:
-              form.value = data.education.degree
+              form.value = info[data].education.degree
             case 14:
-              form.value = data.education.program
+              form.value = info[data].education.program
               break;
             case 15:
             case 16:
-              form.value = data.education.grade
+              form.value = info[data].education.grade
               break;
             }
         }
