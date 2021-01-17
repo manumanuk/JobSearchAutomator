@@ -3,29 +3,32 @@ var currState = document.getElementsByTagName('h2')[0]
 var currStateString = "";
 var prevStateString = "";
 //Boolean recorded = false;
+var changed=false
 
 function stateUpdate(){
-  currState = document.getElementsByTagName('h2')[0]
+  //var headingList =['h1', 'h2', 'h3']
+  //for(var heading=0; heading<headingList.length && !changed; heading++){
+    currState = document.getElementsByTagName('h2'/*headingList[heading]*/)[0]
   
-  if(currState)
-  {
-    currStateString = currState.innerHTML;
-    
-    if(prevStateString != currStateString)
+    if(currState)
     {
-      //console.log(prevStateString);
-      prevStateString = currStateString;
-      //console.log(currStateString);
-      console.log("Prev State String Updated");
-      setTimeout(function() {
-        getPageHTML()
-        console.log("I delayed")
-      }, 2000);
-      
-
+     currStateString = currState.innerHTML;
+    
+     if(prevStateString != currStateString)
+     {
+       //console.log(prevStateString);
+       prevStateString = currStateString;
+       //console.log(currStateString);
+       //console.log("Prev State String Updated");
+       setTimeout(function() {
+          getPageHTML()
+          console.log("I delayed")
+          changed = true
+        }, 2000);
     }
   }
-}
+  }
+//}
 
 getPageHTML();
 function getPageHTML() {
@@ -49,11 +52,7 @@ function getPageHTML() {
           form.value = "Aryan"
         }
       }
-
-      
     }
-    
-    // label[i].innerHTML.includes("Name")
   }
 }
 
