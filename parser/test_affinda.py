@@ -38,9 +38,6 @@ def return_json(path):
             headers=headers,
         )
 
-    with open('/home/goodmanmcgee/JobSearchAutomator/parser/data.json', 'w') as outfile:
-        json.dump(response.json(), outfile)
-
     return response.json()
 
     import flask
