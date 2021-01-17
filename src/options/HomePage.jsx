@@ -52,17 +52,21 @@ class HomePage extends Component {
         let uploadedFile = event.target.files[0]
         let url = 'URLForFlaskAPI'
         var req = fetch(url, {
-            method: post,
+            method: "post",
             body: uploadedFile
         })
 
         req.then(function(response) {
             return response.json()
-        }).then(function(obj) {obj => obj.json()})
+        }).then(function(obj) {return obj.json()})
     }
     
     handleChange(event) {
         this.setState({[event.target.source]: event.target.value}, () => (console.log([event.target.source])));
+    }
+
+    handleSubmit(event) {
+        console.log(event.target.firstName.value);
     }
     
     addToList(name) {
@@ -190,7 +194,7 @@ class HomePage extends Component {
                     <Container>
                         <Row>
                             <Col>
-                            <Form>
+                            <Form onSubmit={this.handleSubmit}>
                                 <Form.Group>
                                     {Object.keys(this.state).map((key, index) => (
                                     <>
